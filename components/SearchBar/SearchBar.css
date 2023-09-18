@@ -1,0 +1,13 @@
+.search-animation{
+    animation: search-animation 1s ease forwards;
+    transform-origin: right;
+}
+
+@keyframes search-animation {
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
