@@ -1,0 +1,27 @@
+/* ocultar nav*/
+.navbar-hide {
+    animation: hideNavBar 0.3s ease; 
+    animation-fill-mode: forwards; /* Mantiene el último estado de la animación */
+}
+@keyframes hideNavBar {
+    0% {
+        transform: translateY(0); 
+    }
+    100% {
+        transform: translateY(-100%); 
+    }
+}
+
+/*mostrar nav*/
+.navbar-show {
+    animation: showNavBar 0.3s ease; 
+    animation-fill-mode: forwards; 
+}
+@keyframes showNavBar {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}

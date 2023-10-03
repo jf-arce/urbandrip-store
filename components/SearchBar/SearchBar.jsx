@@ -12,15 +12,15 @@ export const SearchBar = () => {
     }
 
     return (
-        <div className="relative left-0"> 
+        <div className="relative left-0 flex justify-start items-center gap-2 "> 
             <div 
-                className={`${clickSearch ? "text-black" : "text-white" } text-2xl h-full absolute right-0 top-0 flex justify-center items-center z-50 transition-colors`} 
+                className={`text-2xl flex justify-center items-center z-50 `} 
                 href="/" 
                 onClick={handleClickSearch}
             >
                 <HiOutlineSearch/>
             </div>
-            <input type="text" className={`${clickSearch ? "search-animation" : "hidden" } text-black p-1 rounded-sm`}/>
+            <input type="text" className={` text-white py-1 px-2 rounded-sm focus:outline-none bg-[#ffffff52]`}/>
         </div>
     )
 }

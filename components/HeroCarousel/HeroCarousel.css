@@ -1,6 +1,35 @@
-.swiper-button-next:after, .swiper-button-prev:after{
-    color: black;
+.arrow{
+    color: rgb(0, 0, 0);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 50;
+    font-size: 35px;
+    cursor: pointer;
+    opacity: 0.5;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s ease;
 }
-.swiper-pagination-bullets{
-    color: black;
-}
+
+.arrow:hover{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+} 
+
+/* .carousel-container {
+    height: 500px; 
+  }
+*/
+/* .slick-slider{
+    overflow: visible;
+    position: relative;
+} */
+/* .slick-slide{
+    padding: 15px;
+} */
+
+
+ 
