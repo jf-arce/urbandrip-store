@@ -6,7 +6,7 @@ export const NavModal = ({isEnter,handleMouseEnter,handleMouseLeave}) => {
         <ul>
             <li className={`hover:bg-[#ffffffde] hover:text-black px-3 rounded-sm p-1 transition-colors cursor-pointer`}>
                 <div className="flex items-center gap-1">
-                    <Link href="/">Buzos</Link>
+                    <Link href="/productos/hoodies">Buzos</Link>
                 </div>
             </li>
             <li className={`hover:bg-[#ffffffde] hover:text-black px-3 rounded-sm p-1 transition-colors cursor-pointer`}>

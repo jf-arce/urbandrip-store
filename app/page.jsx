@@ -1,13 +1,13 @@
-import { Button } from "@/components/Button";
 import { ButtonScroll } from "@/components/ButtonScroll";
 import { HeroCarousel } from "@/components/HeroCarousel/HeroCarousel";
 import { ProductCarousel } from "@/components/ProductCarousel/ProductCarousel";
+import Link from "next/link";
 
 
 export default function Home() {
 
   return (
-    <main>
+    <div>
       <div className="relative flex justify-center items-center">
         <video src="/videos/streetclothes.mp4" muted loop autoPlay className="w-full h-screen object-cover "></video>
         <div className="absolute top-1/4 flex flex-col justify-center items-center text-white z-20">
@@ -22,14 +22,14 @@ export default function Home() {
         <ProductCarousel/>
         <div className="flex flex-col justify-center items-center gap-12 my-16 before:h-[2px] before:w-[85%] before:bg-[#0000004b]">
           <div>
-            <Button text="Ver todos los productos" url="/"/>
+            <Link href="/shop" className="w-full border-[2px] rounded-sm border-black p-3 hover:bg-black hover:text-white transition-colors">
+              Ver más productos 
+            </Link>
           </div>
         </div>
         <HeroCarousel/>
-        <div className="mt-16">
-          <img src="https://media.newera.com.ar/wysiwyg/sliders/newera/banner-Julio_03-desk-min.jpg" alt="" />
-        </div>
+        MARCAS
       </div>
-    </main>
+    </div>
   )
 }

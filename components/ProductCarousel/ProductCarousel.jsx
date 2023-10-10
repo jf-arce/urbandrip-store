@@ -23,7 +23,7 @@ export const ProductCarousel = () => {
         },
       },
       {
-        breakpoint: 800,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -43,12 +43,10 @@ export const ProductCarousel = () => {
     <div>
       <Slider {...settings}>
         {stock.map((prod) => (
-          <div className="p-[15px]" key={prod.id}>
-            <div className="hover:shadow-md transition-transform">
+          <div className="p-[15px] rounded-b-md" key={prod.id}>
+            <div className="hover:shadow-md transition-transform rounded-b-md">
               <CardItem
-                img={prod.image}
-                title={prod.title}
-                price={prod.price}
+                prod={...prod}
               />
             </div>
           </div>

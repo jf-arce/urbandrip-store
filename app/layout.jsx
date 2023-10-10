@@ -2,6 +2,9 @@ import { NavBar } from '@/components/NavBar/NavBar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { TopNavBar } from '@/components/TopNavBar/TopNavBar'
+import { Footer } from '@/components/Footer/Footer'
+import { CartContextProvider, useCartContext } from '@/context/CartContext'
+import { CartView } from '@/components/CartView'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,11 +17,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className='fixed z-[9999] w-full'>
-          {/* <TopNavBar/> */}
-          <NavBar/>
-        </header>
-        {children}
+        <CartContextProvider>
+          <header className='fixed z-[8888] w-full top-0'>
+            <NavBar/>
+          </header>
+          <main>
+            {children}
+            <CartView/>
+          </main>
+          <Footer/>
+        </CartContextProvider>
       </body>
     </html>
   )
