@@ -7,20 +7,15 @@ import { useFilterContext } from "@/context/FilterContext";
 export const Filter = () => {
 
   const brands = ['Vans','Nike','Fear of God'];
-  const categories = ['Hoodies','Remeras','Pantalones'];
 
-  const {filterCategories,filterBrands} = useFilterContext();
+  const {filterBrands} = useFilterContext();
 
   const handleFilterBrands = (event) => {
     filterBrands(event);
   };
 
-  const handleFilterCategories = (event) => {
-    filterCategories(event)
-  };
-
   return (
-    <div className="border-2 border-[#00000015] rounded-sm max-w-[300px] relative">
+    <aside className=" max-w-[300px] relative">
       <FilterContainer>
         <h3 className="text-base font-bold">Talle</h3>
         <ul className="flex gap-4">
@@ -50,28 +45,9 @@ export const Filter = () => {
         </ul>
       </FilterContainer>
       <FilterContainer>
-        <h3 className="text-base font-bold">Categorias</h3>
-        <ul className="flex flex-col gap-2">
-          {categories.map((categorie, index) => {
-            return (
-              <li className="flex gap-2" key={index}>
-                <input
-                  onChange={handleFilterCategories}
-                  id={categorie}
-                  name={categorie}
-                  type="checkbox"
-                  value={categorie}
-                />
-                <label htmlFor={categorie}>{categorie}</label>
-              </li>
-            );
-          })}
-        </ul>
-      </FilterContainer>
-      <FilterContainer>
         <PriceRangeFilter/>
       </FilterContainer>
-    </div>
+    </aside>
   );
 };
 

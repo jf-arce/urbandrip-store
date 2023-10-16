@@ -7,53 +7,72 @@ export const useFilterContext = ()=> useContext(filterContext);
 
 export const FilterContextProvider = ({children})=>{
 
-    const [categoriesFiltered, setCategoriesFiltered] = useState([]);
     const [brandsFiltered, setBrandsFiltered] = useState([]);
+    const [sizesFiltered, setSizesFiltered] = useState([]);
     const [filters, setFilters] = useState({
         category: 'all',
         minPrice: 20000,
-        brand: 'all'
+        brand: 'all',
+        size: 'all'
     });
 
     const filterProducts = (products) =>{
-        return products.filter(product =>
-            product.price >= filters.minPrice && 
-            (filters.category === 'all' || filters.category.includes(product.category)) && 
-            (filters.brand === 'all' || filters.brand.includes(product.brand))
+        return products.filter(product =>{
+                return product.price >= filters.minPrice && 
+                (filters.category === 'all' || filters.category.includes(product.category)) && 
+                (filters.brand === 'all' || filters.brand.includes(product.brand)) &&
+                (filters.size === 'all' || product.size.some((size) => filters.size.includes(size)))
+            }
         );
     };
 
     const filterBrands = (event) =>{
-        handleFilter(event, brandsFiltered, setBrandsFiltered, 'brand');
-    };
-
-    const filterCategories = (event) =>{
-        handleFilter(event, categoriesFiltered, setCategoriesFiltered, 'category');
-    };
-
-
-    const handleFilter = (event, state, setState, filterKey) => {
         const value = event.target.value.toLowerCase();
         if (event.target.checked) {
-          const newArray = [...state, value];
-          setState(newArray);
+          const newArray = [...brandsFiltered, value];
+          setBrandsFiltered(newArray);
           setFilters(prevState => ({
             ...prevState,
-            [filterKey]: newArray
+            brand: newArray
           }));
         } else {
-          const newArray = state.filter(item => item !== value);
-          setState(newArray);
+          const newArray = brandsFiltered.filter(item => item !== value);
+          setBrandsFiltered(newArray);
           setFilters(prevState => ({
             ...prevState,
-            [filterKey]: newArray.length ? newArray : 'all'
+            brand: newArray.length ? newArray : 'all'
           }));
+        }
+    };
+
+    const filterCategoriesNavBar =(categorie)=>{
+        setFilters(prevState => ({
+            ...prevState,
+            category: categorie
+        }));
+    }
+
+    const filterBySize = (size,sizeSelected) =>{
+        if(sizeSelected){
+            const newArraySizes = [...sizesFiltered, size.toLowerCase()];
+            setSizesFiltered(newArraySizes);
+             setFilters(prevState => ({
+                 ...prevState,
+                 size: newArraySizes
+             }));
+        }else{
+            const newArraySizes = sizesFiltered.filter(item => item !== size.toLowerCase());
+            setSizesFiltered(newArraySizes);
+            setFilters(prevState => ({
+                ...prevState,
+                size: newArraySizes.length ? newArraySizes : 'all'
+            }));
         }
     };
       
 
     return (
-        <filterContext.Provider value={{filters,setFilters,filterProducts,filterCategories,filterBrands}}>
+        <filterContext.Provider value={{filters,setFilters,filterProducts,filterBrands,filterCategoriesNavBar,filterBySize}}>
             {children}
         </filterContext.Provider>
     )

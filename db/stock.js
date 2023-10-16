@@ -6,7 +6,7 @@ export const stock = [
         image:"https://images.stockx.com/images/Fear-of-God-Essentials-Hoodie-Wood.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=webp&auto=compress&dpr=2&trim=color&updated_at=1664401013&q=60",
         category: "hoodies",
         brand:"fear of god",
-        size: ["s", "m", "l", "xl", "xxl"]
+        size: ['s','m','l','xl']
     },
     {
         id: 2,
@@ -15,8 +15,8 @@ export const stock = [
         price: 50000,
         image:"https://images.stockx.com/images/Fear-of-God-Essentials-Kids-Hoodie-Iron.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=webp&auto=compress&dpr=2&trim=color&updated_at=1646952431&q=60",
         category: "hoodies",
-        brand:"fear of god"
-
+        brand:"fear of god",
+        size: ['s','l',]
     },
     {
         id:3,
@@ -24,8 +24,8 @@ export const stock = [
         price: 40000,
         image:"https://www.indy.com.ar/cdn/shop/files/BuzoVansTriedandTrueRusticoCrudo1.jpg?v=1696016015&width=990",
         category: "hoodies",
-        brand:"vans"
-
+        brand:"vans",
+        size: ['s','xl']
     },
     {
         id: 4,
@@ -33,8 +33,8 @@ export const stock = [
         price: 35000,
         image: "https://www.indy.com.ar/cdn/shop/files/BuzoVansCustomTallPoLadrillo3.webp?v=1696022098&width=990",
         category: "hoodies",
-        brand:"vans"
-
+        brand:"vans",
+        size: ['m','l']
     },
     {
         id: 5,
@@ -42,7 +42,8 @@ export const stock = [
         price: 30000,
         image: "https://www.eldon.com.ar/media/catalog/product/cache/2318891599dd6b7da7fbbfb553d20c24/1/8/18092023-4sep-kobe-eldon_667.jpg",
         category: "hoodies",
-        brand:"nike"
+        brand:"nike",
+        size: ['s','m','l','xl']
     },
     {
         id: 6,
@@ -50,7 +51,8 @@ export const stock = [
         price: 25800,
         image: "https://www.eldon.com.ar/media/catalog/product/cache/2318891599dd6b7da7fbbfb553d20c24/0/4/04102023-iqbajtwj_copia.jpg",
         category: "pantalones",
-        brand:"vans"
+        brand:"vans",
+        size: ['s','l']
     },
     {
         id: 7,
@@ -58,7 +60,8 @@ export const stock = [
         price: 21020,
         image: "https://www.eldon.com.ar/media/catalog/product/cache/2318891599dd6b7da7fbbfb553d20c24/3/1/31072023-27jul2023-kobe-eldon_1048_copia.jpg",
         category: "pantalones",
-        brand:"vans"
+        brand:"vans",
+        size: ['l','xl']
     },
     {
         id: 8,
