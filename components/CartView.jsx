@@ -22,7 +22,7 @@ export const CartView = () => {
           onClick={handleCartView}
         ></IoIosCloseCircleOutline>
         <h2 className="text-xl">Mi carrito</h2>
-        <div className="w-full flex flex-col items-center mt-10 mb-6 gap-8 overflow-y-auto h-full">
+        <div className="w-full flex flex-col items-center mt-10 mb-6 gap-8 overflow-y-auto h-full overflow-x-hidden">
           {cartSize() === 0 ? (
             <h2 className="text-3xl mt-16">Tu carrito esta vacio</h2>
           ) : (

@@ -8,9 +8,9 @@ export default function Productos(){
     return(
         <div>
             <HeroCarousel/>
-            <div className="px-32 grid grid-flow-col py-10">
+            <div className="px-32 grid grid-cols-[auto,1fr] py-10 gap-10">
                 <Filter/>
-                <ul className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
+                <ul className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-12">
                     {stock.map(prod => (
                         <li>
                             <CardItem 

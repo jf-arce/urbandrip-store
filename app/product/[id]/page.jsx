@@ -18,8 +18,8 @@ export default function Product({params}) {
         <div className='h-52 bg-black text-white flex justify-center items-end text-2xl'>
             <h1 className='uppercase m-5'>{product.category}</h1>
         </div>
-        <div className='flex px-5 py-10 w-full'>
-            <img src={product.image} alt="" className='w-[800px]'/>
+        <div className='flex px-32 py-10 w-full gap-10'>
+            <img src={product.image} alt="" className='w-[800px] object-cover max-h-[800px]'/>
             <div className='flex flex-col gap-5 flex-grow'>
                 <div className='flex flex-col gap-5 after:h-[1.5px] after:w-full after:bg-[#00000025] after:mb-4'>
                     <div className='flex gap-2 items-center'>
